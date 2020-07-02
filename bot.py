@@ -9,17 +9,14 @@ import time
 import sys
 import default_values
 
-
 import os
 is_prod = os.environ.get('IS_HEROKU', None)
 
-if is_prod==None:
+if is_prod:
+    BOT_TOKEN = os.environ.get('BOT_TOKEN')
+else:
     import config
     BOT_TOKEN = config.BOT_TOKEN
-else:
-    BOT_TOKEN = os.environ.get('BOT_TOKEN')
-
-
 
 bot = commands.Bot(command_prefix = '!')
 bot.remove_command("help")
