@@ -6,9 +6,19 @@ import requests
 from bs4 import BeautifulSoup
 
 import time
-import config
 import sys
 import default_values
+
+
+import os
+is_prod = os.environ.get('IS_HEROKU', None)
+
+if is_prod==None:
+    import config
+    BOT_TOKEN = config.BOT_TOKEN
+else:
+    BOT_TOKEN = os.environ.get('BOT_TOKEN')
+
 
 
 bot = commands.Bot(command_prefix = '!')
@@ -107,6 +117,6 @@ async def fetch_headline():
             await channel.send(entry.link)
 
 
-bot.run(config.BOT_TOKEN)
+bot.run(BOT_TOKEN)
 
 
