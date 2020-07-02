@@ -6,7 +6,6 @@ dateparser==0.7.6
 feedparser==5.2.1
 idna==2.10
 isort==4.3.21
-lazy-object-proxy==0.0.0
 mccabe==0.6.1
 pygooglenews==0.1.0
 pylint==2.5.3
