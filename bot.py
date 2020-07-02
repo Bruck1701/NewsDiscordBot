@@ -107,7 +107,6 @@ async def fetch_headline():
             await channel.send(entry.link)
 
 
-
 bot.run(config.BOT_TOKEN)
 
 
